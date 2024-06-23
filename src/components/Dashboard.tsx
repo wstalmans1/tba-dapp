@@ -1,7 +1,6 @@
 import '../styles/main.css';
 import { UserGroupIcon, HomeIcon, DocumentDuplicateIcon } from '@heroicons/react/24/outline';
 import { NavLink, Outlet } from "react-router-dom";
-import ConnectionDot from '../context/connectiondot';
 import App from '../app';
 
 export default function Dashboard() {
