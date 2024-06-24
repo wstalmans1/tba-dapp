@@ -20,7 +20,7 @@ const ConnectionDot: React.FC = () => {
                         <div className="flex items-center">                
                             <div className="mr-2 h-3 w-3 bg-red-500 rounded-full"></div>
                             <span className="text-sm">Not Connected</span>
-                            {/*<button onClick={connectWallet} className="bg-green-500 text-green-100 text-xs px-1 py-1 rounded ml-2">Connect</button>*/}
+                            <button onClick={connectWallet} className="bg-green-500 text-green-100 text-xs px-1 py-1 rounded ml-2">Connect</button>*
                             <ConnectionButton />
                         </div>
                     </div>
