@@ -8,7 +8,7 @@ import PartySplit from "./components/PartySplit";
 import PayWithMetamask from "./components/PayWithMetamask";
 import PayWithSigner from "./components/PayWithSigner";
 import './styles/main.css';
-import { Web3Provider } from "./context/Web3Context";
+import { ContextProvider } from "./context/Context";
 
 
 const router = createHashRouter([ 
@@ -23,8 +23,8 @@ const router = createHashRouter([
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
     <React.StrictMode>
-        <Web3Provider>
+        <ContextProvider>
             <RouterProvider router={router} />
-        </Web3Provider>
+        </ContextProvider>
     </React.StrictMode>,
 );    

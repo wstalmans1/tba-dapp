@@ -11,9 +11,10 @@
  */
 
         import React, { createContext, useContext, useEffect, useState } from 'react';
-        import { formatBalance } from '../utils/utils';
+        //import { configureChains, createClient, WagmiProvider, http, useAccount, useBalance, useConnect, useDisconnect } from 'wagmi';
+        import { formatBalance } from '../utils/Formatting';
         
-        interface Web3ContextType {
+        interface ContextType {
             provider: any;
             account: string | null;
             balance: string | null;
@@ -29,11 +30,11 @@
         // The provider-component is provided with the info to be shared and used to wrap around components to provide context values. 
         // The provider-component is used to provide the context values to its children.
         // The conumer-component is Used by other files to consume the context values (though in modern React, useContext hook is typically used instead).
-        const Web3Context = createContext<Web3ContextType | undefined>(undefined);
+        const Context = createContext<ContextType | undefined>(undefined);
         
         
         // Web3Provider component to create and provide the Web3 context to its children
-        export const Web3Provider: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
+        export const ContextProvider: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
             
             const [provider, setProvider] = useState<any>(null);
             const [account, setAccount] = useState<string | null>(null);
@@ -122,15 +123,15 @@
         
             // Set the context (with its values provider, account, connectWallet) and pass them down to the component tree
             return (
-                <Web3Context.Provider value={{ provider, account, balance, connectWallet, disconnectWallet }}>
+                <Context.Provider value={{ provider, account, balance, connectWallet, disconnectWallet }}>
                     {children}
-                </Web3Context.Provider>
+                </Context.Provider>
             );
         };
         
         // Custom hook to use the Web3 context. All descendant components (children) can access the context values using useContext(Web3Context).
         export const useWeb3Context = () => {
-            const context = useContext(Web3Context);
+            const context = useContext(Context);
             if (!context) {
                 throw new Error('useWeb3 must be used within a Web3Provider');
             }

@@ -15,7 +15,8 @@ const config = getDefaultConfig({
 });
 
 const queryClient = new QueryClient();
-const App = () => {
+
+const ConnectionButton = () => {
   return (
     <WagmiProvider config={config}>
       <QueryClientProvider client={queryClient}>
@@ -27,4 +28,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default ConnectionButton;

@@ -1,7 +1,7 @@
 import '../styles/main.css';
 import { UserGroupIcon, HomeIcon, DocumentDuplicateIcon } from '@heroicons/react/24/outline';
 import { NavLink, Outlet } from "react-router-dom";
-import App from '../app';
+import ConnectionDot from '../utils/ConnectionDot';
 
 export default function Dashboard() {
   return (
@@ -66,7 +66,7 @@ export default function Dashboard() {
             {/* <LatestInvoices latestInvoices={latestInvoices} /> */}
           {/* </div> */}
           
-          <div className="pt-1 pb-2"><App /></div>
+          <div className="pt-1 pb-2"><ConnectionDot /></div>
           <div className="flex-grow bg-white bg-opacity-20 w-full h-full rounded-lg mt-1">
             <Outlet />
           </div>
