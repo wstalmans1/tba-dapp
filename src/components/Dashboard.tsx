@@ -1,6 +1,8 @@
+import React from 'react';
 import '../styles/main.css';
 import { UserGroupIcon, HomeIcon, DocumentDuplicateIcon } from '@heroicons/react/24/outline';
 import { NavLink, Outlet } from "react-router-dom";
+import { ConnectButton as RainbowConnectButton} from '@rainbow-me/rainbowkit';
 import ConnectionDot from '../utils/ConnectionDot';
 
 export default function Dashboard() {
@@ -39,7 +41,7 @@ export default function Dashboard() {
               <div className="hidden h-auto w-full grow rounded-md bg-green-900 md:block"></div>
               <NavLink to="/" className={({ isActive }) => `flex h-[48px] grow items-center justify-center gap-2 rounded-md text-gray-50 p-3 text-sm font-medium md:flex-none md:justify-start md:p-2 md:px-3 ${ isActive ? 'bg-red-800' : 'bg-green-800 hover:bg-red-900'}`}>
                 <HomeIcon className="h-5 w-5" />
-                <span className="hidden md:block">Home_</span>
+                <span className="hidden md:block">Home</span>
               </NavLink>
               
               {/* <NavLink to="/dashboard/manageconnection" className={({ isActive }) => `flex h-[48px] grow items-center justify-center gap-2 rounded-md text-gray-50 p-3 text-sm font-medium md:flex-none md:justify-start md:p-2 md:px-3 ${ isActive ? 'bg-red-800' : 'bg-green-800 hover:bg-red-900'}`}> */}
@@ -66,9 +68,9 @@ export default function Dashboard() {
             {/* <LatestInvoices latestInvoices={latestInvoices} /> */}
           {/* </div> */}
           
-          <div className="pt-1 pb-2"><ConnectionDot /></div>
+          <div className="pt-1 pb-2"><ConnectionDot/><RainbowConnectButton /></div>
           <div className="flex-grow bg-white bg-opacity-20 w-full h-full rounded-lg mt-1">
-            <Outlet />
+            <Outlet/>
           </div>
         </main>  
       </div>
